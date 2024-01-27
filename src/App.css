@@ -1,0 +1,39 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+*,
+*::before,
+*::after{
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  font-family: 'Merriweather Sans',times,serif;
+}img{
+  max-width: 100%;
+  max-height: 100%;
+  display: inline-block;
+  object-fit: contain;
+}button{
+  font-family: inherit;
+  display: inline-block;
+  border: none;
+}
+body{
+  background-color: black;
+  color:white;
+}ul{
+  list-style: none;
+}button{
+  display: inline-block;
+  border: none;
+  font-family: inherit;
+}.app{
+  background-image:url('https://miro.medium.com/v2/resize:fit:2400/1*CJ4nO62qGB8ua4jCm4zwtg.gif');
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}

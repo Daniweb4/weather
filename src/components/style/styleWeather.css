@@ -1,0 +1,65 @@
+
+
+.weather{
+    background-color: #fff8;
+    padding: 30px;
+    color: #0B5345;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+   
+}.title_weather{
+    font-size: 2.8rem;
+}.city_weather{
+    font-size: 1.6rem;
+}button{
+    background-color: #148F77 ;
+    margin-top: 5%;
+    width: 20vh;
+    height: 7vh;
+    cursor: pointer;
+    border-radius: 16px;
+    
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: inset 0 0 0 0 #8e44ad;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    
+}.btn:hover{
+    transform: scale(1.1);
+    box-shadow: inset 400px 0 0 0#8e44ad;
+}.clouds_weather{
+    margin:15px 0;
+    text-align: center;
+}.info_weather{
+  
+width: 175px;
+ 
+  
+}.weather_info li{
+    margin: 5px 0;
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    
+    
+}
+.temp_weather{
+    margin: 10px 0;
+    text-align: center;
+}.container_weather{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}.container_weather >div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}.img_weather{
+    width: 200px;
+}

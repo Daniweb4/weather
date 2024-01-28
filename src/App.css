@@ -28,6 +28,7 @@ body{
   display: inline-block;
   border: none;
   font-family: inherit;
+  cursor: pointer;
 }.app{
   background-image:url('https://miro.medium.com/v2/resize:fit:2400/1*CJ4nO62qGB8ua4jCm4zwtg.gif');
   min-height: 100vh;

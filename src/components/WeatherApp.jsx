@@ -33,17 +33,19 @@ const WeatherApp=({weather,temp,settext,hasError,hasvacio }) =>{
 
         </form>
         {
-          hasvacio?
-          
-          <h2>Llenar campo</h2>
-          
-          :
           hasError?
           <>
           <h2>This city does not exist</h2>
           <h2>please enter again</h2>
           </>
           :
+          hasvacio?
+          <>
+          <h2>enter the name of the city</h2>
+          <h2>please thanks</h2>
+          </>
+          :
+          
           <>
           <h2 className='city_weather' >{weather?.name},   {weather?.sys.country}</h2>
        

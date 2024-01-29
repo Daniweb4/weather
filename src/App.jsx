@@ -12,7 +12,8 @@ function App() {
   const [text, settext] = useState('');
   const [saveInput, setSaveInput] = useState();
   const [hasError, sethasError] = useState(false);
-  const [hasvacio, sethasvacio] = useState(true)
+  const [hasvacio, sethasVacio] = useState(false);
+  
 
 
   const success= position => {
@@ -32,10 +33,11 @@ function App() {
           celsius:(res.data.main.temp-273.15).toFixed(2),
           fahrenheit:((res.data.main.temp-273.15)*(9/5)+32).toFixed(2),
         }
+        sethasVacio(!false)
         settemp(grados);
         setWeather(res.data)
       })
-      .catch(err =>console.log(err));
+      .catch(err => console.log(err))
     }
   }, [coords]);
 
@@ -51,7 +53,6 @@ function App() {
         celsius:(res.data.main.temp-273.15).toFixed(2),
         fahrenheit:((res.data.main.temp-273.15)*(9/5)+32).toFixed(2),
       }
-      sethasvacio(false)
       sethasError(false)
       settemp(grados);
       setSaveInput(res.data)
@@ -65,11 +66,8 @@ function App() {
   useEffect(()=>{
 
 
-  }, [])
-  
-  
-  
-  
+  }, []);
+
   console.log(coords);
   console.log(weather);
   
@@ -83,13 +81,15 @@ function App() {
         settext={settext}
         hasError={hasError}
         
-        
         />
         :
         <WeatherApp
         weather={weather}
         temp={temp}
         settext={settext}
+        hasvacio={hasvacio}
+        
+        
         
         />
       

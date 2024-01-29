@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-const WeatherApp=({weather,temp,settext,hasError }) =>{
+const WeatherApp=({weather,temp,settext,hasError,hasvacio }) =>{
   const [grade, setgrade] = useState(true);
 
   const handlebutton=()=>{
@@ -19,6 +19,7 @@ const WeatherApp=({weather,temp,settext,hasError }) =>{
   const handleSearch= event =>{
     event.preventDefault();
     settext(city.current.value.toLowerCase().trim())
+    
    /**Para leer informacion de un input se necesta useRef */ 
    
   }
@@ -26,11 +27,17 @@ const WeatherApp=({weather,temp,settext,hasError }) =>{
     <section className='weather'>
         <h1 className='title_weather' >Weather App</h1>
         <form class="form-group" onSubmit={handleSearch}>
-          <input type="text" required className='weather_text'
+          <input type="text" className='weather_text'
              ref={city}  placeholder="Search"/>
           <button  className='btn2' ><FontAwesomeIcon icon={faSearch} /></button>
+
         </form>
         {
+          hasvacio?
+          
+          <h2>Llenar campo</h2>
+          
+          :
           hasError?
           <>
           <h2>This city does not exist</h2>
@@ -47,10 +54,10 @@ const WeatherApp=({weather,temp,settext,hasError }) =>{
             <div>
               <h3 className='clouds_weather'>{weather?.weather[0].description}</h3>
                 <ul className='info_weather'>
-                  <li><span>Wind speed: </span><span>{weather?.wind.speed}m/s</span></li>
-                  <li><span>Clouds: </span><span>{weather?.clouds.all}%</span></li>
-                  <li><span>Pressure:</span><span>{weather?.main.pressure}Hpa</span></li>
-                  <li><span>Humidity:</span><span>{weather?.main.humidity}%</span></li>
+                  <li><span>Wind speed:</span><span className='span_weather'>{weather?.wind.speed}m/s</span></li>
+                  <li><span>Clouds:</span><span className='span_weather'>{weather?.clouds.all}%</span></li>
+                  <li><span>Pressure:</span><span className='span_weather'>{weather?.main.pressure}Hpa</span></li>
+                  <li><span>Humidity:</span><span className='span_weather'>{weather?.main.humidity}%</span></li>
                 </ul>
             </div>
           </article>
@@ -72,4 +79,4 @@ const WeatherApp=({weather,temp,settext,hasError }) =>{
   )
 }
 
-export default WeatherApp
+export default WeatherApp;
